@@ -11,13 +11,13 @@ pipeline:
   deploy-production:
     image: maximelebastard/drone-gcloudfunctions-plugin
     project: myproject
-    name: myCloudFunction
+    function-name: myCloudFunction
     trigger: http
     region: europe-west-1
     memory: 128MB
     secrets:
-      - source: GAE_CREDENTIALS_PRODUCTION
-        target: GAE_CREDENTIALS
+      - source: GCLOUD_SERVICE_ACCOUNT_PROD
+        target: GCLOUD_SERVICE_ACCOUNT
     when:
       event: deployment
       environment: production
@@ -27,7 +27,7 @@ pipeline:
 ## Parameters
 
 * **project** : Google Cloud project identifier
-* **name**: Name of the cloud function
+* **function-name**: Name of the cloud function
 * **trigger**: Cloud function [trigger](https://cloud.google.com/functions/docs/concepts/events-triggers). **Only http trigger is supported for the moment**
 * **region**: Deployment [region](https://cloud.google.com/compute/docs/regions-zones/)
 *  **memory**: Memory amount to provision for the instance

@@ -1,5 +1,5 @@
 [ -z "$PLUGIN_PROJECT" ] && echo "Please set the \"project\" parameter" && exit 1;
-[ -z "$PLUGIN_NAME" ] && echo "Please set the \"name\" parameter" && exit 1;
+[ -z "$PLUGIN_FUNCTION_NAME" ] && echo "Please set the \"function-name\" parameter" && exit 1;
 [ -z "$PLUGIN_REGION" ] && echo "Please set the \"region\" parameter" && exit 1;
 
 TRIGGER="";
@@ -18,7 +18,7 @@ sh /bin/plugin/auth.sh && \
 
 ls -lah .
 
-gcloud beta functions deploy ${PLUGIN_NAME} \
+gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
   ${TRIGGER} \
   --project=${PLUGIN_PROJECT} \
   --region=${PLUGIN_REGION} \
