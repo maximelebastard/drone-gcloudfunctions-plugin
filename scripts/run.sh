@@ -3,7 +3,7 @@
 [ -z "$PLUGIN_REGION" ] && echo "Please set the \"region\" parameter" && exit 1;
 
 TRIGGER="";
-if [ "${PLUGIN_TRIGGER}" == "http" ]
+if [ "${PLUGIN_TRIGGER}" = "http" ]
 then
   TRIGGER="--trigger-http";
 fi
