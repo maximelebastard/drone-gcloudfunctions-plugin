@@ -1,5 +1,5 @@
 [ -z "$PLUGIN_PROJECT" ] && echo "Please set the \"project\" parameter" && exit 1;
-[ -z "$PLUGIN_FUNCTION_NAME" ] && echo "Please set the \"function-name\" parameter" && exit 1;
+[ -z "$PLUGIN_FUNCTION_NAME" ] && echo "Please set the \"function_name\" parameter" && exit 1;
 [ -z "$PLUGIN_REGION" ] && echo "Please set the \"region\" parameter" && exit 1;
 
 TRIGGER="";
