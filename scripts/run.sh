@@ -14,9 +14,10 @@ then
   MEMORY="--memory=${PLUGIN_MEMORY}";
 fi
 
+
 sh /bin/plugin/auth.sh && \
 
-ls -lah .
+set -o xtrace && \
 
 gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
   ${TRIGGER} \
