@@ -1,5 +1,7 @@
 # Drone Google Cloud Functions deployment plugin
 
+[![Build Status](https://travis-ci.org/maximelebastard/drone-gcloudfunctions-plugin.svg?branch=master)](https://travis-ci.org/maximelebastard/drone-gcloudfunctions-plugin)
+
 Lightweight drone plugin to deploy a Google Cloud Function.
 
 It uses the official Google Cloud SDK image.
