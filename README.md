@@ -35,6 +35,6 @@ pipeline:
 
 ## Secrets
 
-Create a Google Cloud service account that have the bucket permissions.
+Create a Google Cloud service account that has the gcloud functions deployment permissions.
 
 Make sure its content is exposed through the GCLOUD_CREDENTIALS secret.
