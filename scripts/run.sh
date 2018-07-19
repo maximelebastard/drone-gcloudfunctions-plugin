@@ -26,9 +26,9 @@ sh /bin/plugin/auth.sh && \
 
 set -o xtrace && \
 
-echo "gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
+gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
   ${TRIGGER} \
   --project=${PLUGIN_PROJECT} \
   --region=${PLUGIN_REGION} \
   ${MEMORY} \
-  ${ENVFILE}"
+  ${ENVFILE}
