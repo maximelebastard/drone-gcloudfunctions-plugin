@@ -9,9 +9,16 @@ then
 fi
 
 MEMORY="";
-if [ -z "${PLUGIN_MEMORY}" ]
+if [ -n "${PLUGIN_MEMORY}" ]
 then
   MEMORY="--memory=${PLUGIN_MEMORY}";
+fi
+
+ENVFILE="";
+#echo "${PLUGIN_ENVFILE}";
+if [ -n "${PLUGIN_ENVFILE}" ]
+then
+  ENVFILE="--env-vars-file=${PLUGIN_ENVFILE}";
 fi
 
 
@@ -19,8 +26,9 @@ sh /bin/plugin/auth.sh && \
 
 set -o xtrace && \
 
-gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
+echo "gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
   ${TRIGGER} \
   --project=${PLUGIN_PROJECT} \
   --region=${PLUGIN_REGION} \
-  ${MEMORY}
+  ${MEMORY} \
+  ${ENVFILE}"
