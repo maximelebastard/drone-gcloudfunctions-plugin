@@ -14,10 +14,14 @@ then
   MEMORY="--memory=${PLUGIN_MEMORY}";
 fi
 
+PROJECTPATH=${PLUGIN_PROJECTPATH:-"."};
+ABSPROJECTPATH=$(realpath "$PROJECTPATH") || exit 1;
 
 sh /bin/plugin/auth.sh && \
 
 set -o xtrace && \
+
+cd $ABSPROJECTPATH && \
 
 gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
   ${TRIGGER} \

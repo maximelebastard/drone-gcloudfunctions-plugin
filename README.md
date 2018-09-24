@@ -13,6 +13,7 @@ pipeline:
   deploy-production:
     image: maximelebastard/drone-gcloudfunctions-plugin
     project: myproject
+    projectpath: ./maybe/a/subdirectory/of/the/project
     function_name: myCloudFunction
     trigger: http
     region: europe-west-1
@@ -29,6 +30,7 @@ pipeline:
 ## Parameters
 
 * **project** : Google Cloud project identifier
+* **projectpath** : (Optional - default is ".") any subdirectory of the project that contains the cloud function
 * **function_name**: Name of the cloud function
 * **trigger**: Cloud function [trigger](https://cloud.google.com/functions/docs/concepts/events-triggers). **Only http trigger is supported for the moment**
 * **region**: Deployment [region](https://cloud.google.com/compute/docs/regions-zones/)
