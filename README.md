@@ -14,6 +14,7 @@ pipeline:
     image: maximelebastard/drone-gcloudfunctions-plugin
     project: myproject
     projectpath: ./maybe/a/subdirectory/of/the/project
+    envfile: .env.staging.yaml
     function_name: myCloudFunction
     trigger: http
     region: europe-west-1
@@ -35,6 +36,7 @@ pipeline:
 * **trigger**: Cloud function [trigger](https://cloud.google.com/functions/docs/concepts/events-triggers). **Only http trigger is supported for the moment**
 * **region**: Deployment [region](https://cloud.google.com/compute/docs/regions-zones/)
 *  **memory**: Memory amount to provision for the instance
+* **envfile**: _beta feature_ Environment file (see https://cloud.google.com/functions/docs/env-var#functions_env_var_set-nodejs)
 
 
 ## Secrets

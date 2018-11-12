@@ -9,9 +9,15 @@ then
 fi
 
 MEMORY="";
-if [ -z "${PLUGIN_MEMORY}" ]
+if [ -n "${PLUGIN_MEMORY}" ]
 then
   MEMORY="--memory=${PLUGIN_MEMORY}";
+fi
+
+ENVFILE="";
+if [ -n "${PLUGIN_ENVFILE}" ]
+then
+  ENVFILE="--env-vars-file=${PLUGIN_ENVFILE}";
 fi
 
 PROJECTPATH=${PLUGIN_PROJECTPATH:-"."};
@@ -23,8 +29,12 @@ set -o xtrace && \
 
 cd $ABSPROJECTPATH && \
 
-gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
+echo "${ENVFILE} ${PLUGIN_ENVFILE}" && \
+
+echo "gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
   ${TRIGGER} \
   --project=${PLUGIN_PROJECT} \
   --region=${PLUGIN_REGION} \
-  ${MEMORY}
+  ${MEMORY} \
+  ${ENVFILE}";
+
