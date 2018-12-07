@@ -20,6 +20,12 @@ then
   ENVFILE="--env-vars-file=${PLUGIN_ENVFILE}";
 fi
 
+RUNTIME="";
+if [ -n "${PLUGIN_RUNTIME}" ]
+then
+  RUNTIME="--runtime ${PLUGIN_RUNTIME}";
+fi
+
 PROJECTPATH=${PLUGIN_PROJECTPATH:-"."};
 ABSPROJECTPATH=$(realpath "$PROJECTPATH") || exit 1;
 
@@ -35,6 +41,7 @@ echo "gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
   ${TRIGGER} \
   --project=${PLUGIN_PROJECT} \
   --region=${PLUGIN_REGION} \
+  ${RUNTIME} \
   ${MEMORY} \
   ${ENVFILE}";
 

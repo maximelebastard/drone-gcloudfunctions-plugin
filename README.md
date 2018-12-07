@@ -36,6 +36,7 @@ pipeline:
 * **trigger**: Cloud function [trigger](https://cloud.google.com/functions/docs/concepts/events-triggers). **Only http trigger is supported for the moment**
 * **region**: Deployment [region](https://cloud.google.com/compute/docs/regions-zones/)
 *  **memory**: Memory amount to provision for the instance
+* **runtime**: Runtime of the function
 * **envfile**: _beta feature_ Environment file (see https://cloud.google.com/functions/docs/env-var#functions_env_var_set-nodejs)
 
 
