@@ -37,11 +37,11 @@ cd $ABSPROJECTPATH && \
 
 echo "${ENVFILE} ${PLUGIN_ENVFILE}" && \
 
-echo "gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
+gcloud beta functions deploy ${PLUGIN_FUNCTION_NAME} \
   ${TRIGGER} \
   --project=${PLUGIN_PROJECT} \
   --region=${PLUGIN_REGION} \
   ${RUNTIME} \
   ${MEMORY} \
-  ${ENVFILE}";
+  ${ENVFILE}
 
