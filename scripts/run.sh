@@ -23,7 +23,7 @@ fi
 RUNTIME="";
 if [ -n "${PLUGIN_RUNTIME}" ]
 then
-  RUNTIME="--runtime ${PLUGIN_RUNTIME}";
+  RUNTIME="--runtime=${PLUGIN_RUNTIME}";
 fi
 
 PROJECTPATH=${PLUGIN_PROJECTPATH:-"."};
